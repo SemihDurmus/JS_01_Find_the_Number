@@ -1,5 +1,7 @@
 # Project-005 : Find the Number Game (JS-01)
 
+https://semihdurmus.github.io/JS_01_Find_the_Number/
+
 ## Description
 Project aims to create find the number game (between 0 to 100).
 
