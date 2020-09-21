@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
+
+* {
+    margin: 0;
+}
+
+body {
+    background-image: url("./img/background_img2.jpg");
+    background-color: darkred;
+    background-blend-mode: multiply;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100vw;
+    height: 100vh;
+}
+
+
+
+h1 {
+    font-size: 24px;
+    font-family: 'Ranchers', cursive;
+    color: #FFF;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+#inp {
+    width: 40px;
+    height: 40px;
+    font-size: 2.4rem;
+    text-align: center;
+    padding: 4px;
+    font-family: 'Ranchers', cursive;
+    background-color: darkgreen;
+    color: yellow;
+    border:none;
+    box-shadow: 0 0  7px #FFF,
+                0 0  9px #FFF ;
+
+
+}
+
+.buttons {
+    margin-top: 20px;
+    width: 80px;
+    height: 35px;
+    font-family: 'Ranchers', cursive;
+    font-size: 20px;
+    background-color: darkgreen;
+    color: yellow;
+    border:none;
+    box-shadow: 0 2px #828282;
+    position: relative;
+    cursor: pointer;
+}
+
+.buttons:active {
+    top: 2px;
+}
+
+#reset {
+    display :none;
+}
+#check {
+    display :inline-block;
+}
+
+#directions {
+    margin: 15px 0;
+    color: #FFF;
+    font-family: 'Ranchers', cursive;
+    letter-spacing: 2px;
+    font-size: 15px;
+}
+
+
+@media screen and (max-width: 506px) {
+
+    h1 {
+        font-size: 18px;
+
+    }
+    #directions {
+        font-size: 12px;
+    }
+}
