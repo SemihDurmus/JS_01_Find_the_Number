@@ -55,10 +55,16 @@ h1 {
     position: relative;
     cursor: pointer;
     letter-spacing: 2px;
+
 }
 
 .buttons:active {
     top: 2px;
+    box-shadow: none;
+}
+
+.buttons:focus {
+    outline: none;
 }
 
 #reset {

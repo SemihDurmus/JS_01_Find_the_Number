@@ -37,7 +37,8 @@ function nr_checker() {
             document.getElementById("inp").value = "";
         }
     } else {
-        alert("This is not a number")
+        alert("This is not a number");
+        document.getElementById("inp").value = "";
     }
 }
 
