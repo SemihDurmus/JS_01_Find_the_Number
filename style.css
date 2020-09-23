@@ -38,9 +38,18 @@ h1 {
     border:none;
     box-shadow: 0 0  7px #FFF,
                 0 0  9px #FFF ;
-
-
 }
+
+/* For hiding up down arrows */
+#inp::-webkit-outer-spin-button,  
+#inp::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+#inp[type=number] {
+    -moz-appearance: textfield;
+  }
 
 .buttons {
     margin-top: 20px;
@@ -63,9 +72,9 @@ h1 {
     box-shadow: none;
 }
 
-.buttons:focus {
+/* .buttons:focus {
     outline: none;
-}
+} */
 
 #reset {
     display :none;
@@ -90,6 +99,6 @@ h1 {
 
     }
     #directions {
-        font-size: 12px;
+        font-size: 13px;
     }
 }

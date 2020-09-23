@@ -3,42 +3,57 @@
 const random_nr = Math.floor(Math.random() * 10) + 1;
 console.log("random_nr : ", random_nr);
 var counter = 1; 
+const check_btn = document.getElementById("check");
+const reset_btn = document.getElementById("reset");
+const input_area = document.getElementById("inp");
+const directions_area = document.getElementById("directions");
 
 
-document.getElementById("check").addEventListener("click", nr_checker);
-document.getElementById("reset").addEventListener("click", reset_page);
+input_area.addEventListener("keyup", function(evt) {    // Keyup -> Any key pressed
+    if (evt.key === 'Enter') {  
+        evt.preventDefault();                        
+        check_btn.click();
+    }
+});
 
 
+check_btn.addEventListener("click", nr_checker);
+reset_btn.addEventListener("click", reset_page);
 
 function nr_checker() {
-    let guess = parseInt(document.getElementById("inp").value);
+    let guess = parseInt(input_area.value);
     console.log("guess: " + guess);
+    check_btn.focus();
 
     if (! isNaN(guess)) {
         if (guess == random_nr) {
 
-            document.getElementById("reset").style.display = "inline-block";
-            document.getElementById("check").style.display = "none";
+            reset_btn.style.display = "inline-block";
+            check_btn.style.display = "none";
+            reset_btn.focus();
 
             if (counter <= 3) {
-                document.getElementById("directions").innerHTML = "Congrats!! You found the number in " + counter + ". attepmt!"
+                directions_area.innerHTML = "Congrats!! You found the number in " + counter + ". attepmt!"
             } else if (counter < 5){
-                document.getElementById("directions").innerHTML = "You found the number in " + counter + ". attepmt. Not bad"
+                directions_area.innerHTML = "You found the number in " + counter + ". attepmt. Not bad"
             } else {
-                document.getElementById("directions").innerHTML = "You found the number in " + counter + ". attepmt. <br> Could be better next time."
+                directions_area.innerHTML = "You found the number in " + counter + ". attepmt. <br> Could be better next time."
             }
         } else if (guess < random_nr) {
-            document.getElementById("directions").innerHTML = "You should go up!";
-            document.getElementById("inp").value = "";
+            directions_area.innerHTML = "You should go up!";
+            input_area.value = "";
+            input_area.focus();
             counter++;
         } else {
-            document.getElementById("directions").innerHTML = "You should go down!";
+            directions_area.innerHTML = "You should go down!";
             counter++;
-            document.getElementById("inp").value = "";
+            input_area.value = "";
+            input_area.focus();
         }
     } else {
         alert("This is not a number");
-        document.getElementById("inp").value = "";
+        input_area.value = "";
+        input_area.focus();
     }
 }
 
